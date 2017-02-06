@@ -2,7 +2,7 @@ from __future__ import print_function
 import pipes
 import subprocess
 
-from pylib.util import try_pop, unpack_args
+from .util import try_pop, unpack_args
 
 def _format_command(command):
     return " ".join(map(pipes.quote, map(str, command)))
