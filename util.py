@@ -2,7 +2,8 @@ from __future__ import print_function
 import contextlib
 import os
 
-def make_path(*paths):
+def make_path(*args):
+    paths = unpack_args(*args)
     return os.path.abspath(os.path.join(*[p for p in paths if p is not None]))
 
 def try_pop(d, key, default):
