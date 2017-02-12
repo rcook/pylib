@@ -55,8 +55,8 @@ def temp_file():
 
 @contextlib.contextmanager
 def temp_cwd(dir):
-    saved_dir = os.getcwd()
     try:
+        saved_dir = os.getcwd()
         os.chdir(dir)
         yield
     finally:

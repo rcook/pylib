@@ -14,18 +14,9 @@ import os
 def try_pop(d, key, default):
     value = d.get(key, default)
     if key in d:
-      d.pop(key)
+        d.pop(key)
     return value
 
 def unpack_args(*args):
     l = list(args)
     return l[0] if len(l) == 1 and isinstance(l[0], list) else l
-
-@contextlib.contextmanager
-def working_dir(dir):
-    try:
-        saved_dir = os.getcwd()
-        os.chdir(dir)
-        yield
-    finally:
-        os.chdir(saved_dir)
