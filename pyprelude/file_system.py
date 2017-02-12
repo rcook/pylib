@@ -11,6 +11,8 @@ from __future__ import print_function
 import os
 import stat
 
+from .util import unpack_args
+
 def _on_error(func, path, exc_info):
     if os.access(path, os.W_OK):
         raise
