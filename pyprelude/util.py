@@ -12,6 +12,17 @@ import contextlib
 import os
 
 def try_pop(d, key, default):
+    """
+    >>> d = {"a": "b", "c": "d", "e": "f"}
+    >>> try_pop(d, "g", "default")
+    'default'
+    >>> d
+    {'a': 'b', 'c': 'd', 'e': 'f'}
+    >>> try_pop(d, "c", "default")
+    'd'
+    >>> d
+    {'a': 'b', 'e': 'f'}
+    """
     value = d.get(key, default)
     if key in d:
         d.pop(key)
