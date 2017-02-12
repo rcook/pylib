@@ -1,3 +1,12 @@
+############################################################
+#
+# pylib.file_system
+# Copyright (C) 2017, Richard Cook
+# Release under MIT License
+# https://github.com/rcook/pylib
+#
+############################################################
+
 from __future__ import print_function
 import stat
 

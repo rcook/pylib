@@ -1,3 +1,12 @@
+############################################################
+#
+# pylib.temp_util
+# Copyright (C) 2017, Richard Cook
+# Release under MIT License
+# https://github.com/rcook/pylib
+#
+############################################################
+
 from __future__ import print_function
 import contextlib
 import os
