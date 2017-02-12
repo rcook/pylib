@@ -1,9 +1,9 @@
 ############################################################
 #
-# pylib.temp_util
+# pyprelude.temp_util
 # Copyright (C) 2017, Richard Cook
 # Release under MIT License
-# https://github.com/rcook/pylib
+# https://github.com/rcook/pyprelude
 #
 ############################################################
 

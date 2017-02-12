@@ -1,4 +1,4 @@
-# pylib
+# pyprelude
 
 General-purpose Python support functions
 
