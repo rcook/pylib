@@ -25,5 +25,19 @@ def remove_dir(dir):
     shutil.rmtree(dir, onerror=_on_error)
 
 def make_path(*args):
+    """
+    >>> make_path("/a", "b")
+    '/a/b'
+    >>> make_path(["/a", "b"])
+    '/a/b'
+    >>> make_path(*["/a", "b"])
+    '/a/b'
+    >>> make_path("/a")
+    '/a'
+    >>> make_path(["/a"])
+    '/a'
+    >>> make_path(*["/a"])
+    '/a'
+    """
     paths = unpack_args(*args)
     return os.path.abspath(os.path.join(*[p for p in paths if p is not None]))
