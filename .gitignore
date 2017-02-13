@@ -1,4 +1,9 @@
 *.pyc
-/*.egg-info/
+/.Python
 /.eggs/
 /dist/
+/bin/
+/include/
+/lib/
+/pip-selfcheck.json
+/pyprelude.egg-info/
