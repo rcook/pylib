@@ -25,4 +25,5 @@ setup(
     license="MIT",
     packages=["pyprelude"],
     include_package_data=True,
+    test_suite="pyprelude.tests.suite",
     zip_safe=False)
