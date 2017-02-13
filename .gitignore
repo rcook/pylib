@@ -1,8 +1,8 @@
 *.pyc
 /.Python
 /.eggs/
-/dist/
 /bin/
+/dist/
 /include/
 /lib/
 /pip-selfcheck.json
