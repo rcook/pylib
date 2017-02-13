@@ -17,6 +17,11 @@ setup(
     description="General-purpose Python support functions",
     setup_requires=["setuptools-markdown"],
     long_description_markdown_filename="README.md",
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 2.7",
+    ],
     url="https://github.com/rcook/pyprelude",
     author="Richard Cook",
     author_email="rcook@rcook.org",
