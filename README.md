@@ -2,6 +2,12 @@
 
 General-purpose Python support functions
 
+## Install prerequisites
+
+```
+pip install setuptools-markdown
+```
+
 ## Upload new versions to [PyPI][pypi]
 
 ```
