@@ -13,7 +13,7 @@ from setuptools import setup
 
 setup(
     name="pyprelude",
-    version="0.6",
+    version="0.7",
     description="General-purpose Python support functions",
     setup_requires=["setuptools-markdown"],
     long_description_markdown_filename="README.md",

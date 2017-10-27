@@ -11,7 +11,16 @@ import os
 import shutil
 import stat
 
+from .platform import ON_WINDOWS
 from .util import unpack_args
+
+def _hack_make_path_doctest_output(s):
+    if ON_WINDOWS:
+        drive, _ = os.path.splitdrive(os.getcwd())
+        assert s.startswith(drive + "\\")
+        return s[len(drive) : ].replace("\\", "/")
+    else:
+        return s
 
 def _remove_dir_on_error(func, path, exc_info):
     if os.access(path, os.W_OK):
@@ -33,17 +42,17 @@ def remove_dir(path):
 
 def make_path(*args):
     """
-    >>> make_path("/a", "b")
+    >>> _hack_make_path_doctest_output(make_path("/a", "b"))
     '/a/b'
-    >>> make_path(["/a", "b"])
+    >>> _hack_make_path_doctest_output(make_path(["/a", "b"]))
     '/a/b'
-    >>> make_path(*["/a", "b"])
+    >>> _hack_make_path_doctest_output(make_path(*["/a", "b"]))
     '/a/b'
-    >>> make_path("/a")
+    >>> _hack_make_path_doctest_output(make_path("/a"))
     '/a'
-    >>> make_path(["/a"])
+    >>> _hack_make_path_doctest_output(make_path(["/a"]))
     '/a'
-    >>> make_path(*["/a"])
+    >>> _hack_make_path_doctest_output(make_path(*["/a"]))
     '/a'
     """
     paths = unpack_args(*args)
