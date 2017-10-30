@@ -1,5 +1,7 @@
 # pyprelude
 
+[![View on PyPI](https://img.shields.io/pypi/v/pyprelude.svg)](https://pypi.python.org/pypi/pyprelude)
+
 General-purpose Python support functions
 
 ## Install prerequisites
