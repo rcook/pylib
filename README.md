@@ -11,18 +11,6 @@ General-purpose Python support functions
 pip install setuptools-markdown
 ```
 
-## Run tests
-
-```
-python.exe setup.py test
-```
-
-## Upload new versions to [PyPI][pypi]
-
-```
-python setup.py sdist upload
-```
-
 ## Licence
 
 [MIT License][licence]
