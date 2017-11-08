@@ -12,7 +12,6 @@ import shutil
 import stat
 
 from .platform import ON_WINDOWS
-from .temp_util import temp_dir
 from .util import unpack_args
 
 def _hack_make_path_doctest_output(s):
@@ -34,6 +33,8 @@ def remove_dir(path):
     try:
         shutil.rmtree(path, onerror=_remove_dir_on_error)
     except WindowsError:
+        from .process import execute
+        from .temp_util import temp_dir
         with temp_dir() as d:
             status, output, error = execute("robocopy.exe", d, path, "/mir", can_fail=True)
             if status != 2:
