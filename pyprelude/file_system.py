@@ -12,6 +12,7 @@ import shutil
 import stat
 
 from .platform import ON_WINDOWS
+from .temp_util import temp_dir
 from .util import unpack_args
 
 def _hack_make_path_doctest_output(s):
