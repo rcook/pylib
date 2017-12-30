@@ -10,6 +10,7 @@
 import os
 import shutil
 import stat
+import tempfile
 
 from .platform import ON_WINDOWS
 from .util import unpack_args
@@ -34,11 +35,16 @@ def remove_dir(path):
         shutil.rmtree(path, onerror=_remove_dir_on_error)
     except WindowsError:
         from .process import execute
-        from .temp_util import temp_dir
-        with temp_dir() as d:
+
+        d = None
+        try:
+            d = tempfile.mkdtemp()
             status, output, error = execute("robocopy.exe", d, path, "/mir", can_fail=True)
             if status != 2:
                 raise RuntimeError("robocopy failed with status {} (output={}, error={})".format(status, output, error))
+        finally:
+            if d is not None:
+                os.rmdir(d)
 
         os.rmdir(path)
 
